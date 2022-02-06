@@ -1,10 +1,14 @@
-import styles from "../../styles/Home.module.css";
+import Navbar from "../Navbar";
+import styles from "../../styles/PublicLayout.module.css";
 
 const PublicLayout = ({ children }) => {
   return (
-    <div className={styles.container}>
-      <main className={styles.main}>{children}</main>
-    </div>
+    <>
+      <Navbar />
+      <div className={styles.container}>
+        <main className={styles.main}>{children}</main>
+      </div>
+    </>
   );
 };
 

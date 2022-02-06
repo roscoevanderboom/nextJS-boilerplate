@@ -4,15 +4,16 @@ import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }) {
   return (
-    <div>
+    <>
       <Head>
         <meta name="keywords" content="Boilerplate" />
+        <meta name="description" content="Boilerplate for NextJS" />
         <title>Boilerpalte</title>
       </Head>
       <PublicLayout>
         <Component {...pageProps} />
       </PublicLayout>
-    </div>
+    </>
   );
 }
 

@@ -1,0 +1,22 @@
+.nav {
+    background-color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.ul {
+    display: flex;
+    justify-content: flex-start;
+    list-style: none;
+    align-items: center;
+    padding: 12px;
+}
+
+.li {
+    margin: 0 12px;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+}
