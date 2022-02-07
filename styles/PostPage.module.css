@@ -1,0 +1,27 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.content {
+  width: 100%;
+  max-width: 800px;
+}
+
+.link {
+  padding: 12px 18px;
+  border: 2px solid white;
+  border-radius: 8px;
+}
+
+.link:hover {
+  border: 2px solid rgb(104, 87, 87);
+  -webkit-box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
+    5px 5px 15px 5px rgba(0, 0, 0, 0);
+  box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
+    5px 5px 15px 5px rgba(0, 0, 0, 0);
+}
+
+.hr {
+  margin: 25px 0;
+}
