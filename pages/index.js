@@ -5,14 +5,14 @@ import Header from "../components/Header";
 import PostsList from "../components/PostsList";
 
 export default function Index({ posts }) {
-  const {state} = useStore();
+  const { state } = useStore();
 
   console.log(state);
   return (
     <>
       <Head>
         <meta name="keywords" content="Boilerplate" />
-        <title>JSON Placeholder posts</title>
+        <title>NextJS Firebase boilerplate</title>
       </Head>
       <Header text="JSON Placeholder posts" />
       <PostsList posts={posts} />
