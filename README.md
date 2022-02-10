@@ -1,2 +1,3 @@
 # nextJS-boilerplate
-Starter boilerplate for Next JS - MuiV5 with typescript
+Starter boilerplate for Next JS with typescript - MuiV5 - Firebase
+
