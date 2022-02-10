@@ -15,7 +15,7 @@ export default function Custom404() {
     return (
         <div className={classes.wrapper}>
             <h1>404 - Page Not Found</h1>
-            <Link href="/">Bsck to Home Page</Link>
+            <Link href="/">Back to Home Page</Link>
         </div>
     )
 }

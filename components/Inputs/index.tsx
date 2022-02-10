@@ -1,16 +1,19 @@
-import { TextField } from "@mui/material";
+import { TextField, TextFieldProps } from "@mui/material";
+import inputStyles from "../../styles/jss/components/inputStyles";
 
-
-
-export function DefaultInput() {
-    return (
-        <TextField
-            error
-            id="standard-error-helper-text"
-            label="Error"
-            defaultValue="Hello World"
-            helperText="Incorrect entry."
-            variant="standard"
-        />
-    )
+export function DefaultInput(props: TextFieldProps) {
+  const { error, id, label, value, helperText, variant } = props;
+  const classes = inputStyles();
+  return (
+    <TextField
+      id={id}
+      {...props}
+      value={value}
+      error={error}
+      className={classes.root}
+      label={label ? label : null}      
+      helperText={helperText && error ? helperText : ""}
+      variant={variant ? variant : "standard"}
+    />
+  );
 }
