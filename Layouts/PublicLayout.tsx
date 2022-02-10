@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import { AppBar, Toolbar } from "@mui/material";
-import { AdminNav } from "../components/Nav/Topnav";
+import { PublicNav } from "../components/Nav/Topnav";
 import layoutStyles from "../styles/jss/layoutStyles";
 
 const PublicLayout: NextPage = ({ children }) => {
@@ -9,7 +9,7 @@ const PublicLayout: NextPage = ({ children }) => {
     <>
         <AppBar color="default" position="static">
         <Toolbar variant="dense">
-          <AdminNav />
+          <PublicNav />
         </Toolbar>
       </AppBar>
       <main className={classes.main}>{children}</main>

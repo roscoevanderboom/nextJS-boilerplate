@@ -3,6 +3,7 @@ import Link from "next/link";
 import PublicLayout from "../Layouts/PublicLayout";
 
 const Home: NextPage = () => {
+
   return (
     <PublicLayout>
       <main>

@@ -1,6 +1,7 @@
-import Head from "next/head";
+import { Provider } from "../context";
 import type { AppProps } from "next/app";
 import SEO from "../SEO/index";
+import Head from "next/head";
 import "../styles/globals.css";
 
 function App({ Component, pageProps }: AppProps) {
@@ -33,7 +34,9 @@ function App({ Component, pageProps }: AppProps) {
         <meta name="description" content={SEO.DESCRIPTION} />
         <title>{SEO.TITLE}</title>
       </Head>
-      <Component {...pageProps} />
+      <Provider>
+        <Component {...pageProps} />
+      </Provider>
     </>
   );
 }

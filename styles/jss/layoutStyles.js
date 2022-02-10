@@ -1,10 +1,8 @@
 import { makeStyles } from "@mui/styles";
+import { main } from "./globals";
 
-const layoutStyles = makeStyles({
-  main: {
-    marginTop: 25,
-    padding: "0 25px"
-  },
+const adminLayoutStyles = makeStyles({
+  main,
 });
 
-export default layoutStyles;
+export default adminLayoutStyles;
