@@ -12,6 +12,13 @@ const loginStyles = makeStyles({
     width: "100%",
     display: 'flex',
     flexDirection: 'column'
+  },
+  link: {
+    fontWeight: 600,
+    color: 'blue',
+    "&:hover": {
+      color: 'purple',
+    }
   }
 });
 

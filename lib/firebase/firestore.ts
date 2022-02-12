@@ -1,4 +1,6 @@
-import { DocumentData, getFirestore, collection, getDocs } from "firebase/firestore";
+import { firestore } from "./app"
+import {DocumentData} from "firebase/firestore";
+const { getFirestore, collection, getDocs } = firestore;
 
 const db = getFirestore();
 const gameroomRef = collection(db, "gamerooms");

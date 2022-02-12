@@ -4,7 +4,7 @@ import { AccountCircle } from "@mui/icons-material";
 
 export const LoginButton = (props: any) => {
   return (
-    <Link href="/login">
+    <Link href="/login" passHref>
       <IconButton {...props}>
         <AccountCircle />
       </IconButton>

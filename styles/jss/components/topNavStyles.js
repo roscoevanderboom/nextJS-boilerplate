@@ -6,8 +6,8 @@ const topNavStyles = makeStyles({
     alignItems: "center",
   },
   listItems: {
-    // color: "inherit",
-    // listStyle: "none",
+    color: "inherit",
+    listStyle: "none",
     margin: "0 12px"
   },
    toolbar: {

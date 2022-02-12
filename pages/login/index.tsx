@@ -1,6 +1,8 @@
 import React, { SyntheticEvent, useState } from "react";
+import { handleSignIn } from "../../lib/firebase/auth";
 import Link from "next/link";
 import { Paper, Divider, Button } from "@mui/material";
+import { Title } from "../../components/Typography";
 import { DefaultInput } from "../../components/Inputs";
 import loginStyles from "../../styles/jss/pages/login";
 
@@ -11,32 +13,39 @@ const init = {
 
 export default function Login() {
   const [formData, setFormData] = useState(init);
+
   const classes = loginStyles();
+
   const handleChange = (key: string) => (e: any) => {
     setFormData({ ...formData, [key]: e.currentTarget.value });
   };
 
   const handleSubmit = (e: SyntheticEvent) => {
     e.preventDefault();
-    console.log(formData);
+
+    if (!formData.email || !formData.password) {
+      window.alert("Form incomplete");
+      return;
+    }
+    handleSignIn({ ...formData });
   };
+
   return (
     <div className={classes.flex_centered}>
       <Paper sx={{ boxShadow: 10 }} className={classes.paper}>
-        <h2 className="title">Login</h2>
+        <Title>Login</Title>
         <form onSubmit={handleSubmit} className={classes.form}>
           <DefaultInput
             id="email-input"
             label="Email"
-            error={false}
-            helperText="Please enter a valid email"
+            type="email"
+            onChange={handleChange("email")}
           />
           <DefaultInput
             id="password-input"
             label="Password"
-            error={false}
             type="password"
-            helperText="Incorrect password"
+            onChange={handleChange("password")}
           />
           <Button variant="outlined" type="submit">
             Submit
@@ -44,9 +53,9 @@ export default function Login() {
         </form>
         <br />
         <Divider />
-        <p>Don't have an account yet?</p>
+        <p>{`Don't have an account yet?`}</p>
         <Link href="/registration">
-          <a>Click here to register.</a>
+          <a className={classes.link}>Click here to register.</a>
         </Link>
       </Paper>
     </div>

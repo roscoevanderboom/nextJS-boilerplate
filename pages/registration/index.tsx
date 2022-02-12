@@ -1,6 +1,7 @@
 import React, { SyntheticEvent, useState, FormEvent } from "react";
 import Link from "next/link";
 import { Paper, Divider, Button } from "@mui/material";
+import { Title } from "../../components/Typography";
 import { DefaultInput } from "../../components/Inputs";
 import registrationStyles from "../../styles/jss/pages/login";
 
@@ -26,12 +27,13 @@ export default function Registration() {
   return (
     <div className={classes.flex_centered}>
       <Paper sx={{ boxShadow: 10 }} className={classes.paper}>
-        <h2 className="title">Registration</h2>
+        <Title>Registration</Title>
         <form onSubmit={handleSubmit} className={classes.form}>
           <DefaultInput
             id="email-input"
             label="Email"
             type="email"
+            required
             error={false}
             onChange={handleChange("email")}
             helperText="Please enter a valid email"
@@ -40,6 +42,7 @@ export default function Registration() {
             id="password-input"
             label="Password"
             error={false}
+            required
             type="password"
             onChange={handleChange("password")}
           />
@@ -47,6 +50,7 @@ export default function Registration() {
             id="confirm-password-input"
             label="Confirm Password"
             error={false}
+            required
             type="password"
             onChange={handleChange("confirm")}
           />
@@ -57,8 +61,8 @@ export default function Registration() {
         <br />
         <Divider />
         <p>Already have an account?</p>
-        <Link href="/registration">
-          <a>Click here to login.</a>
+        <Link href="/login">
+          <a className={classes.link}>Click here to login.</a>
         </Link>
       </Paper>
     </div>

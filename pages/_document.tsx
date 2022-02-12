@@ -9,7 +9,7 @@ export default class Doc extends Document {
         <Head>
           <link
             rel="stylesheet"
-            href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons"
+            href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=optional|Material+Icons"
           />
           <link
             href="https://fonts.googleapis.com/icon?family=Material+Icons"
