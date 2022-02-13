@@ -1,4 +1,4 @@
-import { Provider } from "../context";
+import { Provider } from "../context/index";
 import type { AppProps } from "next/app";
 import SEO from "../SEO/index";
 import Head from "next/head";

@@ -1,16 +1,17 @@
 // Types
-import type { NextRouter } from "next/router";
-import { createContext, useContext, useEffect, useReducer } from "react";
+import { createContext, useContext, useEffect, useReducer, FC } from "react";
 import { useRouter } from "next/router";
 import { handleAuthChange } from "../lib/firebase/auth";
 import appState from "./initialState";
 import { appReducer } from "../reducers";
+// Types
+import { AppState } from "./types";
 
-const Store = createContext(appState);
+const Store = createContext<AppState | null>(null);
 
 export const useStore = () => useContext(Store);
 
-export const Provider = ({ children }: any) => {
+export const Provider: FC = ({ children }) => {
   const [state, dispatch] = useReducer(appReducer, appState);
   const router = useRouter();
 
@@ -25,5 +26,17 @@ export const Provider = ({ children }: any) => {
     handleAuthChange(router, actions);
   }, []);
 
-  return <Store.Provider value={{ ...state, actions, router }}>{children}</Store.Provider>;
+  useEffect(() => {
+    state.loading
+      ? router.push("/loading")
+      : !state.loading && state.user
+      ? router.push("/dashboard")
+      : !state.loading && !state.user
+      ? router.push("/")
+      : null;
+  }, [state.loading, state.user]);
+
+  return (
+    <Store.Provider value={{ ...state, actions }}>{children}</Store.Provider>
+  );
 };
