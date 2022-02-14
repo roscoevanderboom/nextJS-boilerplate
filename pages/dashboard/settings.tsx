@@ -1,10 +1,11 @@
+import type { NextPage } from "next";
 import AdminLayout from "../../Layouts/AdminLayout";
-const settings = () => {
+const index: NextPage = () => {
   return (
     <AdminLayout>
-      <div>Settings</div>
+      <h2 className="title">Settings</h2>
     </AdminLayout>
   );
 };
 
-export default settings;
+export default index;

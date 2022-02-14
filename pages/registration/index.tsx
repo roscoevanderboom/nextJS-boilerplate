@@ -1,4 +1,6 @@
-import React, { SyntheticEvent, useState, FormEvent } from "react";
+import type { NextPage } from "next";
+import { RegProps } from "../../types/login";
+import React, { SyntheticEvent, useState } from "react";
 import Link from "next/link";
 import { Paper, Divider, Button } from "@mui/material";
 import { Title } from "../../components/Typography";
@@ -11,8 +13,8 @@ const init = {
   confirm: "",
 };
 
-export default function Registration() {
-  const [formData, setFormData] = useState(init);
+const Registration: NextPage = () => {
+  const [formData, setFormData] = useState<RegProps>(init);
   const classes = registrationStyles();
 
   const handleChange = (key: string) => (e: any) => {
@@ -67,4 +69,6 @@ export default function Registration() {
       </Paper>
     </div>
   );
-}
+};
+
+export default Registration;

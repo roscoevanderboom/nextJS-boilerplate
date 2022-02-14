@@ -8,7 +8,7 @@ const Home: NextPage = () => {
     <PublicLayout>
       <main>
       <h1 className="title">Landing page with public layout</h1>
-        <Link passHref href="/dashboard">
+        <Link passHref href="/dashboard/profile">
           <a>Go to Dashboard</a>
         </Link>
       </main>

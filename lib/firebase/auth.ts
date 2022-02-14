@@ -20,11 +20,13 @@ export const handleAuthChange = (actions: any) => {
     onAuthStateChanged(_auth, (user) => {
         if (!user) {
             Router.push('/')
+            actions("SET_USER", user);
+            actions("SET_LOADING", false);
         } else {
-            Router.push('/dashboard/profile')
+            Router.push('/dashboard/profile');
+            actions("SET_USER", user);
+            actions("SET_LOADING", false);
         }
-        actions("SET_USER", user);
-        actions("SET_LOADING", false);
     });
 };
 

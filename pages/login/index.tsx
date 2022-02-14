@@ -1,3 +1,5 @@
+import type { NextPage } from "next";
+import { LoginProps } from "../../types/login";
 import React, { SyntheticEvent, useState } from "react";
 import { handleSignIn } from "../../lib/firebase/auth";
 import Link from "next/link";
@@ -11,8 +13,8 @@ const init = {
   password: "",
 };
 
-export default function Login() {
-  const [formData, setFormData] = useState(init);
+const Login: NextPage = () => {
+  const [formData, setFormData] = useState<LoginProps>(init);
 
   const classes = loginStyles();
 
@@ -60,4 +62,6 @@ export default function Login() {
       </Paper>
     </div>
   );
-}
+};
+
+export default Login;

@@ -23,6 +23,10 @@ export const publicRoutes = [
 
 export const adminRoutes = [
   {
+    text: "Home",
+    href: "/",
+  },
+  {
     text: "Profile",
     href: "/dashboard/profile",
   },
