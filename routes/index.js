@@ -24,14 +24,14 @@ export const publicRoutes = [
 export const adminRoutes = [
   {
     text: "Profile",
-    href: "/profile",
+    href: "/dashboard/profile",
   },
   {
     text: "Users",
-    href: "/users",
+    href: "/dashboard/users",
   },
   {
     text: "Settings",
-    href: "/settings",
+    href: "/dashboard/settings",
   },
 ]

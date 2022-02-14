@@ -1,4 +1,5 @@
 import { auth } from "./app";
+import Router from "next/router";
 const {
     getAuth,
     signOut,
@@ -15,15 +16,15 @@ interface SignInProps {
     password: string
 }
 
-export const handleAuthChange = (router: any, actions: any) => {
+export const handleAuthChange = (actions: any) => {
     onAuthStateChanged(_auth, (user) => {
-        actions("SET_USER", user)
-        // console.log(user);
-        // if (user) {
-        //     router.push('/dashboard')
-        // } else {
-        //     router.push('/')
-        // }
+        if (!user) {
+            Router.push('/')
+        } else {
+            Router.push('/dashboard/profile')
+        }
+        actions("SET_USER", user);
+        actions("SET_LOADING", false);
     });
 };
 
@@ -34,15 +35,15 @@ export const handleSignIn = async ({ email, password }: SignInProps) => {
         switch (error.code) {
             case "auth/user-not-found":
                 window.alert(`That email has not been registered.`);
-                break;        
+                break;
             case "auth/wrong-password":
                 window.alert(`Incorrect password for this email.`);
-                break;        
+                break;
             default:
                 window.alert(error.code);
                 break;
         }
-        
+
     }
 };
 
@@ -59,5 +60,5 @@ export const handleCreateUser = async ({ email, password }: SignInProps) => {
 };
 
 export const handleSignOut = () => {
-    signOut(_auth);
+    signOut(_auth).then(() => Router.push('/'));
 };

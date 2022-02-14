@@ -9,7 +9,7 @@ export const appReducer = (state: any, action: any) => {
         case "SET_USER":
             return { ...state, user: payload };
         case "SET_LOADING":
-            return { ...state, user: payload };
+            return { ...state, loading: payload };
         default:
             break;
     }

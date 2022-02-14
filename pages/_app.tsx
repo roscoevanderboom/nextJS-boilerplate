@@ -2,6 +2,7 @@ import { Provider } from "../context/index";
 import type { AppProps } from "next/app";
 import SEO from "../SEO/index";
 import Head from "next/head";
+import Loading from "./loading";
 import "../styles/globals.css";
 
 function App({ Component, pageProps }: AppProps) {
@@ -36,6 +37,7 @@ function App({ Component, pageProps }: AppProps) {
       </Head>
       <Provider>
         <Component {...pageProps} />
+        <Loading />
       </Provider>
     </>
   );

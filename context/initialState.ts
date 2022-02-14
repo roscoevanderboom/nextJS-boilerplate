@@ -2,7 +2,7 @@
 const appState = {
     user: null,
     profile: null,
-    loading: false
+    loading: true
 }
 
 export default appState;
