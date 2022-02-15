@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import { RegProps } from "../../types/login";
 import React, { SyntheticEvent, useState } from "react";
+import { handleCreateUser } from "../../lib/firebase/auth";
 import Link from "next/link";
 import { Paper, Divider, Button } from "@mui/material";
 import { Title } from "../../components/Typography";
@@ -23,7 +24,11 @@ const Registration: NextPage = () => {
 
   const handleSubmit = (e: SyntheticEvent) => {
     e.preventDefault();
-    console.log(formData);
+    if (formData.password !== formData.confirm) {
+      window.alert("Passwords do not match.")
+      return;
+    }
+    handleCreateUser({ ...formData });
   };
 
   return (

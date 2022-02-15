@@ -57,7 +57,7 @@ export const handleCreateUser = async ({ email, password }: SignInProps) => {
             console.log("Sucess")
         }
     } catch (error: any) {
-        window.alert(error.message);
+        window.alert(error.code);
     }
 };
 
