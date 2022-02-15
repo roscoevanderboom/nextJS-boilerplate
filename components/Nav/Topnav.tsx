@@ -19,7 +19,7 @@ export function AdminNav() {
           ))}
         </Stack>
         <div>
-          <LoginButton color="inherit" />
+          {!user && <LoginButton color="inherit" />}
           {user && <LogoutButton color="inherit" />}
         </div>
       </Toolbar>
@@ -40,7 +40,7 @@ export function PublicNav() {
           ))}
         </Stack>
         <div>
-          <LoginButton color="info" />
+          {!user && <LoginButton color="info" />}
           {user && <LogoutButton color="info" />}
         </div>
       </Toolbar>
