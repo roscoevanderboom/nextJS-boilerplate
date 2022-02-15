@@ -14,3 +14,15 @@ export const Title = (props: TypographyProps) => {
     </Typography>
   );
 };
+
+export const Paragraph = (props: TypographyProps) => {
+  return (
+    <Typography
+      {...props}
+      paragraph
+      align={props.align ? props.align : "center"}
+    >
+      {props.children}
+    </Typography>
+  );
+};
