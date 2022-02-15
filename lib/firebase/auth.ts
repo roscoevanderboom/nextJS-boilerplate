@@ -54,7 +54,6 @@ export const handleCreateUser = async ({ email, password }: SignInProps) => {
         let user = await createUserWithEmailAndPassword(_auth, email, password);
         if (user) {
             await sendEmailVerification(user.user);
-            console.log("Sucess")
         }
     } catch (error: any) {
         window.alert(error.code);
