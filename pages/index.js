@@ -1,26 +1,21 @@
-import { JSON_PLACEHOLDER } from "../constants/fetchURL";
-import Head from "next/head";
-import Header from "../components/Header";
-import PostsList from "../components/PostsList";
+import DefaultPage from "../components/Pages/DefaultPage";
+import { DefaultLink } from "../components/Links";
+import Script from "next/script";
 
-export default function Index({ posts }) {
+export default function HomePage() {
   return (
-    <>
-      <Head>
-        <meta name="keywords" content="Boilerplate" />
-        <title>JSON Placeholder posts</title>
-      </Head>
-      <Header text="JSON Placeholder posts" />
-      <PostsList posts={posts} />
-    </>
+    <DefaultPage className="pt-5 container">
+      <h1>Welcome to my NextJS Bootstrap 5 boilerplate</h1>
+      <p>
+        This boilerplate contains a{" "}
+        <DefaultLink href="/settings">settings page</DefaultLink> and a{" "}
+        <DefaultLink href="/profile">profile page</DefaultLink>.
+      </p>
+      <Script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"
+      />
+    </DefaultPage>
   );
-}
-
-export async function getStaticProps() {
-  const res = await fetch(JSON_PLACEHOLDER);
-  const posts = await res.json();
-
-  return {
-    props: { posts },
-  };
 }

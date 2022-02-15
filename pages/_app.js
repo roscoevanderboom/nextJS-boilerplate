@@ -1,20 +1,12 @@
-import Head from "next/head";
-import PublicLayout from "../components/Layouts/Public";
+import { Provider } from "../context";
 import "../styles/globals.css";
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
-function MyApp({ Component, pageProps }) {
+// This default export is required in a new `pages/_app.js` file.
+export default function App({ Component, pageProps }) {
   return (
-    <>
-      <Head>
-        <meta name="keywords" content="Boilerplate" />
-        <meta name="description" content="Boilerplate for NextJS" />
-        <title>Boilerpalte</title>
-      </Head>
-      <PublicLayout>
-        <Component {...pageProps} />
-      </PublicLayout>
-    </>
+    <Provider>
+      <Component {...pageProps} />
+    </Provider>
   );
 }
-
-export default MyApp;
