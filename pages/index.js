@@ -1,26 +1,19 @@
-import { JSON_PLACEHOLDER } from "../constants/fetchURL";
 import Head from "next/head";
+import PublicLayout from "../components/Layouts/Public";
 import Header from "../components/Header";
-import PostsList from "../components/PostsList";
 
-export default function Index({ posts }) {
+export default function Index() {
   return (
     <>
       <Head>
         <meta name="keywords" content="Boilerplate" />
-        <title>JSON Placeholder posts</title>
+        <title>NextJS MUI V5 Boilerplate</title>
       </Head>
-      <Header text="JSON Placeholder posts" />
-      <PostsList posts={posts} />
+      <PublicLayout>
+        <main>
+          <Header text="NextJS MUI V5 Boilerplate" />
+        </main>
+      </PublicLayout>
     </>
   );
-}
-
-export async function getStaticProps() {
-  const res = await fetch(JSON_PLACEHOLDER);
-  const posts = await res.json();
-
-  return {
-    props: { posts },
-  };
 }

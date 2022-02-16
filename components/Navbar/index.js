@@ -1,18 +1,20 @@
 import Link from "next/link";
-import styles from "../../styles/Navbar.module.css";
+import { AppBar, Toolbar, Stack, ButtonBase } from "@mui/material";
 
 const Navbar = () => {
   return (
-    <nav className={styles.nav}>
-      <ul className={styles.ul}>
-        <li className={styles.li}>
-          <Link href="/">Home</Link>
-        </li>
-        <li className={styles.li}>
-          <Link href="/about">About</Link>
-        </li>
-      </ul>
-    </nav>
+    <AppBar component="header">
+      <Toolbar variant="regular" component="nav">
+        <Stack spacing={2} component="ul" direction="row">
+          <ButtonBase>
+            <Link href="/">Home</Link>
+          </ButtonBase>
+          <ButtonBase>
+            <Link href="/about">About</Link>
+          </ButtonBase>
+        </Stack>
+      </Toolbar>
+    </AppBar>
   );
 };
 

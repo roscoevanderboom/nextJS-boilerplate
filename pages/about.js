@@ -1,4 +1,5 @@
 import Head from "next/head";
+import PublicLayout from "../components/Layouts/Public";
 import Header from "../components/Header";
 const About = () => {
   return (
@@ -8,9 +9,11 @@ const About = () => {
         <meta name="description" content="The about page" />
         <title>About</title>
       </Head>
-      <main>
-        <Header text="About" />
-      </main>
+      <PublicLayout>
+        <main>
+          <Header text="About" />
+        </main>
+      </PublicLayout>
     </div>
   );
 };

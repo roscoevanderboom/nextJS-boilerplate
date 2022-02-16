@@ -1,5 +1,4 @@
 import Head from "next/head";
-import PublicLayout from "../components/Layouts/Public";
 import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }) {
@@ -10,9 +9,7 @@ function MyApp({ Component, pageProps }) {
         <meta name="description" content="Boilerplate for NextJS" />
         <title>Boilerpalte</title>
       </Head>
-      <PublicLayout>
-        <Component {...pageProps} />
-      </PublicLayout>
+      <Component {...pageProps} />
     </>
   );
 }
